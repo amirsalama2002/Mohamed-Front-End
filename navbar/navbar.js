@@ -25,6 +25,7 @@ const translations = {
       arabe:"Arab",
       German:"German",
       english:"English (US) ",
+
       // NavBar
 
    
@@ -56,6 +57,8 @@ const translations = {
       arabe: "Arabisch",
       German: "Deutsch",
       english: "Englisch (US)",
+
+
       // NavBar
 
 
