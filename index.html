@@ -2,48 +2,50 @@
     <head>
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>Libraria</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
+        <title>Home Page</title>
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" /> -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/flowbite@1.6.4/dist/flowbite.min.js"></script>      
+        <link rel="stylesheet" href="../navbar/navbar.css">
+        
     </head>
     <body>
 
 <!-- navbar -->
- 
-
-
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-         <p id="falcon">Falcon</p>
+    <a href="../home/home.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+         <p id="falcon"></p>
     </a>
     <!--  -->
     <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
-        <!--  -->
+      <!-- الغة -->
         <div class="relative inline-block text-left">
             <button id="langBtn" class="inline-flex justify-center items-center px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none">
             <svg  class="w-5 h-5 rounded-full me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
              English (US) 
-              <!-- <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"> -->
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg z-50">
               <div id="hidden" onclick="setLanguage('en')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                 <svg  class="w-5 h-5 rounded-full me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
-             English (US) 
+                <p id="english"></p>
               </div>
-              <div id="hidden" onclick="setLanguage('ar')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              <div  id="hidden" onclick="setLanguage('ar')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                 <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
-                Arabe
+                <p id="arabe"></p>
               </div>
+              <!-- Garman -->
+              <div  id="hidden" onclick="setLanguage('de')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
+                <p id="German"></p>
+              </div>
+              <!-- Garman -->
             </div>
           </div>
+      <!-- الغة -->
 
-          <!--  -->
         <button data-collapse-toggle="navbar-language" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-language" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -56,29 +58,21 @@
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
       <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a id="navHome" href="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page"></a>
-        </li>
-        <li>
-          <a id="navAbout" href="/book1.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"></a>
-        </li>
-        <li>
-          <a id="server" href="./book2.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"></a>
-        </li>
-        <li>
-          <a id="contact" href="./book3.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
-        </li>
-        <li>
-          <a id="about" href="./book4.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-        </li>
-        <li>
-            <a href="./hassan.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Hassan</a>
+            <a id="navHome" href="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" ></a>
           </li>
+          <li>
+            <a id="about" href="../About/about.html"    class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"></a>
+          </li>
+          <li>
+            <a id="server" href="../server/server.html"  class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"></a>
+          </li>
+        <li>
+          <a id="countactus" href="../countactus/countactus.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"></a>
+        </li>
         <div class="flex items-center md:order-2 space-x-3 rtl:space-x-reverse">
-            <a id="signup" href="/register" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center">
-                Register
+            <a id="signup" href="../signup/registeramir.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center">
               </a>
-            <a id="login" href="/login" class="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-700 font-medium rounded-lg text-sm px-4 py-2 text-center">
-              Login
+            <a id="login" href="../login/login.html" class="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-700 font-medium rounded-lg text-sm px-4 py-2 text-center">
             </a>
         
           </div>
@@ -86,360 +80,11 @@
     </div>
     </div>
   </nav>
-  
-
-
-    <!-- Language Switcher -->
-    
-      
-  <!-- Navigation -->
-  <nav class="mb-6 space-x-4">
-    <a href="#" id="navHome" class="text-blue-600 font-semibold hover:underline"></a>
-    <a href="#" id="navAbout" class="text-blue-600 font-semibold hover:underline"></a>
-    <a href="#" id="navContact" class="text-blue-600 font-semibold hover:underline"></a>
-  </nav>
-
-  <!-- Main Content -->
-  <h1 id="title" class="text-3xl font-bold mb-4"></h1>
-  <p id="description" class="text-lg"></p>
-  <p id="falcon"></p>
-
-  <!-- JavaScript -->
-  <!-- <script src="./hassan.js"></script> -->
-   
 <!-- navbar -->
-        
-<!-- imgs Heder-->
-        <!-- <div class="banner-container">
-            <div class="banner">
-                <img src="images/banners/banner_1.jpg" alt="Image 1">
-                <img src="images/banners/banner_2.jpg" alt="Image 2">
-                <img src="images/banners/banner_5.jpg" alt="Image 3">
-            </div>
-        </div> -->
- <!-- imgs Heder -->
-
-
-<!-- 1 -->
-        <!-- <div class="section" id="book">
-            <h1 class="motasem">Date Books:</h1>
-                <div id="books-container">
-                </div>
-                <div id="pdf-modal" style="display: none; position: fixed; top: 20%; left: 30%; width: 40%; background: #111; color: white; padding: 20px; border-radius: 10px; z-index: 9999;">
-                    <h3>Please log in to save your personal information.</h3>
-                    <p>maximum 7 days or there will be a fine.</p>
-                    <button id="confirm-view" style="margin-right: 10px;">Yes, Open</button>
-                    <button id="cancel-view">Cancel</button>
-                </div>
-                
-                <script>
-                    fetch('http://127.0.0.1:8000/api/date')
-                        .then(response => response.json())
-                        .then(data => {
-                            const container = document.getElementById('books-container');
-                            const baseUrl = "http://127.0.0.1:8000/storage/";
-                
-                            data.forEach(book => {
-                                const bookDiv = document.createElement('div');
-                                bookDiv.className = 'bookamir';
-                                
-                                bookDiv.innerHTML = `
-                                    ${book.cover_image ? `<img src="${baseUrl + book.cover_image}" alt="Cover">` : '<p>No cover</p>'}
-                                    <h6>Book: ${book.title}</h6>
-                                    <h3><strong>Written :</strong> ${book.author}</h3>
-                                    ${book.pdf_file ? `<button class="view-pdf-btn" data-pdf="${baseUrl + book.pdf_file}">View PDF</button>` : '<p>No PDF</p>'}
-                                `;
-                
-                                container.appendChild(bookDiv);
-                            });
-                
-                            // Add click listener after elements are added
-                            document.querySelectorAll('.view-pdf-btn').forEach(btn => {
-                                btn.addEventListener('click', function () {
-                                    const pdfUrl = this.getAttribute('data-pdf');
-                                    showPopup(pdfUrl);
-                                });
-                            });
-                        })
-                        .catch(error => {
-                            console.error('Error fetching data:', error);
-                        });
-                
-                    function showPopup(pdfUrl) {
-                        const modal = document.getElementById('pdf-modal');
-                        modal.style.display = 'block';
-                
-                        // زر الموافقة
-                        document.getElementById('confirm-view').onclick = function () {
-                            window.open(pdfUrl, '_blank');
-                            modal.style.display = 'none';
-                        };
-                
-                        // زر الإلغاء
-                        document.getElementById('cancel-view').onclick = function () {
-                            modal.style.display = 'none';
-                        };
-                    }
-                </script>
-                
-    
-        </div> -->
-<!-- 1 -->
-
-<!-- 2 -->
-        <!-- <section>
-            <h1 class="motasem">Novel Books:</h1>
-            <div id="books-ahmed">
-            </div>
-            <div id="pdf-modal" style="display: none; position: fixed; top: 20%; left: 30%; width: 40%; background: #111; color: white; padding: 20px; border-radius: 10px; z-index: 9999;">
-                <h3>Please log in to save your personal information.</h3>
-                <p>maximum 7 days or there will be a fine.</p>
-                <button id="confirm-view" style="margin-right: 10px;">Yes, Open</button>
-                <button id="cancel-view">Cancel</button>
-            </div>
-            
-            <script>
-                fetch('http://127.0.0.1:8000/api/books')
-                    .then(response => response.json())
-                    .then(data => {
-                        const container = document.getElementById('books-ahmed');
-                        const baseUrl = "http://127.0.0.1:8000/storage/";
-            
-                        data.forEach(book => {
-                            const bookDiv = document.createElement('div');
-                            bookDiv.className = 'bookahmed';
-                            bookDiv.innerHTML = `
-                                ${book.cover_image ? `<img src="${baseUrl + book.cover_image}" alt="Cover">` : '<p>No cover</p>'}
-                                <h6>Book: ${book.title}</h6>
-                                <h3><strong>Written :</strong> ${book.author}</h3>
-                                ${book.pdf_file ? `<button class="view-pdf-btn" data-pdf="${baseUrl + book.pdf_file}">View PDF</button>` : '<p>No PDF</p>'}
-                            `;
-            
-                            container.appendChild(bookDiv);
-                        });
-            
-                        // Add click listener after elements are added
-                        document.querySelectorAll('.view-pdf-btn').forEach(btn => {
-                            btn.addEventListener('click', function () {
-                                const pdfUrl = this.getAttribute('data-pdf');
-                                showPopup(pdfUrl);
-                            });
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error fetching data:', error);
-                    });
-            
-                function showPopup(pdfUrl) {
-                    const modal = document.getElementById('pdf-modal');
-                    modal.style.display = 'block';
-            
-                    // زر الموافقة
-                    document.getElementById('confirm-view').onclick = function () {
-                        window.open(pdfUrl, '_blank');
-                        modal.style.display = 'none';
-                    };
-            
-                    // زر الإلغاء
-                    document.getElementById('cancel-view').onclick = function () {
-                        modal.style.display = 'none';
-                    };
-                }
-            </script>
-        </section> -->
-<!-- 2 -->
 
 
 
-<!-- 3 -->
-        <!-- <div class="section" class="bookmo">
-            <h2 class="motasem">Science Books:</h2>
-            <div id="books-mo">
-            </div>
-            <div id="pdf-modal" style="display: none; position: fixed; top: 20%; left: 30%; width: 40%; background: #111; color: white; padding: 20px; border-radius: 10px; z-index: 9999;">
-                <h3>Please log in to save your personal information.</h3>
-                <p>maximum 8 days or there will be a fine.</p>
-                <button id="confirm-view" style="margin-right: 10px;">Yes, Open</button>
-                <button id="cancel-view">Cancel</button>
-            </div>
-            
-            <script>
-                fetch('http://127.0.0.1:8000/api/novels')
-                    .then(response => response.json())
-                    .then(data => {
-                        const container = document.getElementById('books-mo');
-                        const baseUrl = "http://127.0.0.1:8000/storage/";
-            
-                        data.forEach(book => {
-                            const bookDiv = document.createElement('div');
-                            bookDiv.className = 'bookmo';
-                            bookDiv.innerHTML = `
-                                ${book.cover_image ? `<img src="${baseUrl + book.cover_image}" alt="Cover">` : '<p>No cover</p>'}
-                                <h6>Book: ${book.title}</h6>
-                                <h3><strong>Written :</strong> ${book.author}</h3>
-                                ${book.pdf_file ? `<button class="view-pdf-btn" data-pdf="${baseUrl + book.pdf_file}">View PDF</button>` : '<p>No PDF</p>'}
-                            `;
-            
-                            container.appendChild(bookDiv);
-                        });
-            
-                        // Add click listener after elements are added
-                        document.querySelectorAll('.view-pdf-btn').forEach(btn => {
-                            btn.addEventListener('click', function () {
-                                const pdfUrl = this.getAttribute('data-pdf');
-                                showPopup(pdfUrl);
-                            });
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error fetching data:', error);
-                    });
-            
-                function showPopup(pdfUrl) {
-                    const modal = document.getElementById('pdf-modal');
-                    modal.style.display = 'block';
-            
-                    // زر الموافقة
-                    document.getElementById('confirm-view').onclick = function () {
-                        window.open(pdfUrl, '_blank');
-                        modal.style.display = 'none';
-                    };
-            
-                    // زر الإلغاء
-                    document.getElementById('cancel-view').onclick = function () {
-                        modal.style.display = 'none';
-                    };
-                }
-            </script>
-        
-        </div> -->
-<!-- 3 -->
 
- <!--4-->
- <!-- <section class="falcon">
-    <h1 class="motasem">Literature books</h1>
-    <div id="books-falcon">
-    </div>
-    <div id="pdf-modal" style="display: none; position: fixed; top: 20%; left: 30%; width: 40%; background: #111; color: white; padding: 20px; border-radius: 10px; z-index: 9999;">
-        <h3>Please log in to save your personal information.</h3>
-        <p>maximum 7 days or there will be a fine.</p>
-        <button id="confirm-view" style="margin-right: 10px;">Yes, Open</button>
-        <button id="cancel-view">Cancel</button>
-    </div>
-    
-    <script>
-        fetch('http://127.0.0.1:8000/api/falcon')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('books-falcon');
-                const baseUrl = "http://127.0.0.1:8000/storage/";
-    
-                data.forEach(book => {
-                    const bookDiv = document.createElement('div');
-                    bookDiv.className = 'bookfalcon';
-                    bookDiv.innerHTML = `
-                        ${book.cover_image ? `<img src="${baseUrl + book.cover_image}" alt="Cover">` : '<p>No cover</p>'}
-                        <h6>Book: ${book.title}</h6>
-                        <h3><strong>Written :</strong> ${book.author}</h3>
-                        ${book.pdf_file ? `<button class="view-pdf-btn" data-pdf="${baseUrl + book.pdf_file}">View PDF</button>` : '<p>No PDF</p>'}
-                    `;
-    
-                    container.appendChild(bookDiv);
-                });
-    
-                // Add click listener after elements are added
-                document.querySelectorAll('.view-pdf-btn').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        const pdfUrl = this.getAttribute('data-pdf');
-                        showPopup(pdfUrl);
-                    });
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    
-        function showPopup(pdfUrl) {
-            const modal = document.getElementById('pdf-modal');
-            modal.style.display = 'block';
-    
-            // زر الموافقة
-            document.getElementById('confirm-view').onclick = function () {
-                window.open(pdfUrl, '_blank');
-                modal.style.display = 'none';
-            };
-    
-            // زر الإلغاء
-            document.getElementById('cancel-view').onclick = function () {
-                modal.style.display = 'none';
-            };
-        }
-    </script>
-</section> -->
- <!--4-->
-         
-<!-- About-us -->
-        <!-- <div class="about-us" id="about">
-            <div>
-                <h1 class="title">About Us</h1>
-            </div>
-            <div class="about-info">
-                <h1>Why Choose Us ?</h1>
-                <div class="par-info">
-                    <p>Wide Collection: Access a variety of e-books, journals,
-                        and multimedia resources.</p>
-                    <p>Easy to Use: Our platform is intuitive, making it easy to
-                        find and read materials.</p>
-                    <p>Available Anytime: 24/7 access from any device,
-                        anywhere.</p>
-                </div>
-            </div>
-        </div> -->
-<!-- About-us -->
-<!-- footer -->
-        <!-- <div class="footer" id="contact">
-            <h1 class="title">Contact</h1>
-            <div class="main-footer">
-                <div class="footer-tags">
-                </div>
-                <div class="footer-tags">
-                    <h2 class="h">Quick Lins</h2>
-                    <a href="#">Home</a>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
-                    <a href="login.html">Login</a>
-                    <a href="register.html">Register</a>
-                </div>
-                <div class="footer-tags">
-                    <h2 class="h">Contact</h2>
-                    <p>+201286445931</p>
-                    <p>+201222555556</p>
-                    <p>business@Library.com</p>
-                    <p>business@House of Library.com</p>
-                </div>
-                <div class="footer-tags">
-                    <h2 class="h">Our Service</h2>
-                    <p>Big Library</p>
-\                    <p>24 Hours Service</p>
-                </div>
-                <div class="footer-tags">
-                    <h2 class="h">Follow Us</h2>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/"><i
-                                class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com/?lang=en"><i
-                                class="fa-brands fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>  -->
-<!-- footer -->
-        
-
-<script src="./hassan.js"></script>
-    </body>
+<script src="./home.js"></script>
+</body> 
 </html>
