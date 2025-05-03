@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./auth_style.css">
+    <link rel="icon" href="./Images/banners/banner_1.jpg">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="Images/Final png.png" />
+        </div>
+        
+        <ul>
+            <li><a href="./index.html">Home</a></li> 
+            <li><a href="./book1.html">Novels</a></li>
+            <li><a href="./book2.html">Sciences</a></li>
+            <li><a href="./book3.html">Date</a></li>
+            <li><a href="./book4.html">Literature</a></li>
+            <li><a href="#about">AboutUs</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li> 
+        </ul>
+        <div class="language-switcher">
+            <span>لغة</span>
+            <button onclick="toggleLanguage()">عربي</button>
+        </div>
+        
+                   
+    </div>
+     
+
+
+
+<!-- Register -->
+ <!--
+    <form class="form">
+        <span class="title">Sign up</span>
+        <span class="subtitle">Create a free account with your email.</span>
+        <input type="text" class="input" placeholder="Full Name" required>
+        <input type="tel" class="input"maxlength="11" placeholder="Phone number" required>
+        <input type="email" class="input" placeholder="Email" required>
+        <input type="password" class="input" placeholder="Password" required>
+        <input type="date" class="input" placeholder="Date of birth">
+        <input class="submitButton" type="submit" value="Sign up">
+        <p>Have an account? <a href="login.html">Log in</a> </p>
+    </form>
+-->
+
+
+<form class="form"   id="registerForm">
+    <span class="title">Sign up</span>
+    <label for="name">Full name</label>
+    <input type="text" name="name" id="name" class="input" required>
+
+    <label for="email">Email address</label>
+    <input type="email" name="email" id="email" class="input" placeholder="Email" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" class="input" placeholder="Password" required>
+
+    <label for="password_confirmation">Confirm Password</label>
+    <input type="password" id="password_confirmation" name="password_confirmation" class="input" placeholder="Confirm Password" required>
+    
+    <p class="mt-3 text-center">Already have an account? <a href="./login.html">Log in</a></p>
+    <button id="log" name="log" class="submitButton">Sign Up</button>
+</form>
+
+
+
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const password_confirmation = document.getElementById('password_confirmation').value;
+
+        fetch('http://127.0.0.1:8000/api/register', {
+method: 'POST',
+headers: {
+    'Content-Type': 'application/json',
+},
+body: JSON.stringify({
+    name: name,
+    email: email,
+    password: password,
+    password_confirmation: password_confirmation  // تأكد من إرسال هذا الحقل
+})
+})
+
+        .then(response => response.json())
+        .then(data => {
+            alert('Registration successful!');
+            window.location.href = 'login.html';  // Redirect to login page after successful registration
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Registration failed');
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

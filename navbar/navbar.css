@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #141414;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  body[dir="rtl"] {
+    text-align: right;
+    font-family: 'Cairo', sans-serif; /* خط مناسب للعربية */
+  }
+  
+  body[dir="ltr"] {
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+  }
+  #langBtn{
+    width: 150px !important;
+    font-size: 14px;
+    padding: none !important;
+    color: white !important;
+    background-color: #070b11;
+    border: 1px solid #0d131e;
+    padding: 10px 0px;
+    &:hover{
+        background-color: #181717;
+    }
+  }
+  #langMenu{
+      width: 150px !important;
+      font-size: 13px;
+      border: none !important;
+      
+    }
+    
+    #hidden{
+    background-color: rgba(37, 34, 34, 0.71);
+    display: flex;
+    &:hover{
+        background-color: rgba(37, 34, 34, 0.495);
+  }
+  
+  }
+  ul li{
+    margin-top: 8px;
+  }
+  
+
+
+
+  
+  
+    

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>
+            Libraria
+        </title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="./style.css" />
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            .amir{
+
+                width: 80%;
+                    margin: auto;
+                  text-align: center;
+                  margin-bottom: 200px;
+            }
+            .falcon{
+                width: 100%;
+                margin: auto;
+            }
+            .search { width: 100%; padding: 10px; font-size: 16px; }
+           .amir .result-item { padding: 10px; border-bottom: 1px solid #ccc; cursor: pointer;
+            background-color: rgb(51, 44, 44);
+        width: 350px;
+        border: none;
+        outline: none;
+    margin: auto;
+ }
+            .result-item:hover { background-color: #f0f0f0; }
+            .details { margin-top: 20px; padding: 15px; border: 1px solid #ddd; }
+            .loader, .no-results, .error { margin: 10px 0; color: #666; }
+            button { padding: 8px 12px; font-size: 16px; margin-top: 10px; }
+            img { margin-top: 10px; }
+            .details{
+                width: 300px;
+                margin: auto;
+            }
+            .pro{
+               text-align: center;
+            }
+            .amir .loop{
+                width: 50px;
+                height: 50px;
+            }
+          </style>
+    </head>
+<body>
+<div class="header">
+    <div class="logo">
+        <img src="Images/Final png.png" />
+    </div>
+    <!-- <input id="searchInput" name="search" placeholder="Search..."
+        type="search" oninput="bookSearch()"> -->
+    <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./book1.html">Novels</a></li>
+        <li><a href="./book2.html">Sciences</a></li>
+        <li><a href="./book3.html">Date</a></li>
+        <li><a href="./book4.html">Literature</a></li>
+ 
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li> 
+    </ul>
+    <div class="language-switcher">
+        <span>لغة</span>
+        <button onclick="toggleLanguage()">عربي</button>
+    </div>
+    
+    
+               
+</div>
+<!-- <div id="showResults">
+    <div id="searchResults" class="searchResults"></div>
+</div> -->
+<div class="banner-container">
+    <div class="banner">
+        <img src="images/banners/banner_1.jpg" alt="Image 1">
+        <img src="images/banners/banner_2.jpg" alt="Image 2">
+        <img src="images/banners/banner_5.jpg" alt="Image 3">
+    </div>
+</div>
+
+<!-- 1 -->
+
+
+<h1 class="pro">Date Books</h1>
+<div class="amir">
+  <h2>What Can We Help You Find?</h2>
+  <div class="falcon">
+    <input class="search" type="search" id="searchInput" placeholder="Search for a book...">
+    <div id="results"></div>
+    <div id="details" class="details" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+    const baseUrl = "http://127.0.0.1:8000"; // رابط السيرفر
+    const apiUrl = `${baseUrl}/api/date`;   // رابط API
+    const searchInput = document.getElementById("searchInput");
+    const resultsDiv = document.getElementById("results");
+    const detailsDiv = document.getElementById("details");
+  
+    let debounceTimer;
+  
+    searchInput.addEventListener("input", function () {
+      const query = this.value.trim().toLowerCase();
+  
+      clearTimeout(debounceTimer);
+      if (query.length > 1) {
+        debounceTimer = setTimeout(() => {
+          performSearch(query);
+        }, 300);
+      } else {
+        resultsDiv.innerHTML = "";
+        detailsDiv.style.display = "none";
+      }
+    });
+  
+    function performSearch(query) {
+      resultsDiv.innerHTML = `<p class="loader">Searching ...</p>`;
+      detailsDiv.style.display = "none";
+  
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          resultsDiv.innerHTML = "";
+  
+          const filtered = data.filter(item =>
+            (item.author && item.author.toLowerCase().includes(query)) ||
+            (item.title && item.title.toLowerCase().includes(query)) ||
+            (item.cover_image && item.cover_image.toLowerCase().includes(query)) ||
+            (item.pdf_file && item.pdf_file.toLowerCase().includes(query))
+          );
+  
+          if (filtered.length === 0) {
+            resultsDiv.innerHTML = `<p class="no-results">No books found. Please try again.</p>`;
+          } else {
+            filtered.forEach(item => {
+              const div = document.createElement("div");
+              div.className = "result-item";
+              div.innerHTML = `
+                <img src="${baseUrl}/storage/${item.cover_image}" alt="Cover" width="50">
+                <strong>${item.title}</strong> - ${item.author}
+              `;
+              div.addEventListener("click", () => showDetails(item));
+              resultsDiv.appendChild(div);
+            });
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching data:", error);
+          resultsDiv.innerHTML = `<p class="error">An error occurred while fetching data.</p>`;
+        });
+    }
+  
+    function showDetails(item) {
+      resultsDiv.innerHTML = "";
+      detailsDiv.innerHTML = `
+        <h3><strong>Title:</strong> ${item.title}</h3>
+        <p><strong>Author:</strong> ${item.author}</p>
+        ${item.cover_image ? `<img class="loop" src="${baseUrl}/storage/${item.cover_image}" alt="Cover">` : '<p>No cover</p>'}
+        <br/>
+        ${item.pdf_file ? `<a href="${baseUrl}/storage/${item.pdf_file}" target="_blank"><button>View PDF</button></a>` : '<p>No PDF file available</p>'}
+        <h4 style="margin-top:20px;">Thank you for using our search tool.</h4>
+      `;
+      detailsDiv.style.display = "block";
+      detailsDiv.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+  
+
+
+<!-- kooteb -->
+<section>
+    <h1 class="motasem">Date Books</h1>
+    <div id="books-ahmed">
+    </div>
+    <div id="pdf-modal" style="display: none; position: fixed; top: 20%; left: 30%; width: 40%; background: #111; color: white; padding: 20px; border-radius: 10px; z-index: 9999;">
+        <h3>Please log in to save your personal information.</h3>
+        <p>maximum 7 days or there will be a fine.</p>
+        <button id="confirm-view" style="margin-right: 10px;">Yes, Open</button>
+        <button id="cancel-view">Cancel</button>
+    </div>
+    
+    <script>
+        fetch('http://127.0.0.1:8000/api/date')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('books-ahmed');
+                const baseUrl = "http://127.0.0.1:8000/storage/";
+    
+                data.forEach(book => {
+                    const bookDiv = document.createElement('div');
+                    bookDiv.className = 'bookahmed';
+                    bookDiv.innerHTML = `
+                        ${book.cover_image ? `<img src="${baseUrl + book.cover_image}" alt="Cover">` : '<p>No cover</p>'}
+                        <h6>Book: ${book.title}</h6>
+                        <h3><strong>Written :</strong> ${book.author}</h3>
+                        ${book.pdf_file ? `<button class="view-pdf-btn" data-pdf="${baseUrl + book.pdf_file}">View PDF</button>` : '<p>No PDF</p>'}
+                    `;
+    
+                    container.appendChild(bookDiv);
+                });
+    
+                // Add click listener after elements are added
+                document.querySelectorAll('.view-pdf-btn').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const pdfUrl = this.getAttribute('data-pdf');
+                        showPopup(pdfUrl);
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    
+        function showPopup(pdfUrl) {
+            const modal = document.getElementById('pdf-modal');
+            modal.style.display = 'block';
+    
+            // زر الموافقة
+            document.getElementById('confirm-view').onclick = function () {
+                window.open(pdfUrl, '_blank');
+                modal.style.display = 'none';
+            };
+    
+            // زر الإلغاء
+            document.getElementById('cancel-view').onclick = function () {
+                modal.style.display = 'none';
+            };
+        }
+    </script>
+</section>
+
+<!-- footer-->
+
+
+
+<div class="footer" id="contact">
+    <h1 class="title">Contact</h1>
+    <div class="main-footer">
+        <div class="footer-tags">
+        </div>
+        <div class="footer-tags">
+            <h2 class="h">Quick Lins</h2>
+            <a href="#">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+        <div class="footer-tags">
+            <h2 class="h">Contact</h2>
+            <p>+201286445931</p>
+            <p>+201222555556</p>
+            <p>business@Library.com</p>
+            <p>business@House of Library.com</p>
+        </div>
+        <div class="footer-tags">
+            <h2 class="h">Our Service</h2>
+            <p>Big Library</p>
+\                    <p>24 Hours Service</p>
+        </div>
+        <div class="footer-tags">
+            <h2 class="h">Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://twitter.com/?lang=en"><i
+                        class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/"><i
+                        class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

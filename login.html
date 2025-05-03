@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./auth_style.css">
+    <link rel="icon" href="./Images/banners/banner_1.jpg">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <img src="Images/Final png.png" />
+        </div>
+        
+        <ul>
+            <li><a href="./index.html">Home</a></li> 
+            <li><a href="./book1.html">Novels</a></li>
+            <li><a href="./book2.html">Sciences</a></li>
+            <li><a href="./book3.html">Date</a></li>
+            <li><a href="./book4.html">Literature</a></li>
+            <li><a href="#about">AboutUs</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li> 
+        </ul>
+        <div class="language-switcher">
+            <span>لغة</span>
+            <button onclick="toggleLanguage()">عربي</button>
+        </div>
+        
+        
+                   
+    </div>
+    <!-- login -->
+     <!--
+    <form class="form" id="login-form" >
+               <span class="title">Sign up</span>
+        <span class="subtitle">Welcom to our website</span>
+        <input type="email" id="login-email" class="input" placeholder="Email" name="email" required>
+        <input type="password" class="input" placeholder="Password" name="password" required>
+        <input class="submitButton" type="submit" value="Login">
+        <p>Don't Have an account? <a href="register.html">Register here</a> </p>
+    </form>
+-->
+<form class="form" id="loginForm">
+    <span class="title">Sign up</span>
+    <span class="subtitle">Welcom to our website</span>
+    <label for="name">email</label>
+    <input type="email" name="email" id="loginEmail" class="input" placeholder="Email">
+   <br>
+    <label for="password">password</label>
+    <input type="password" name="password" id="loginPassword" class="input" placeholder="password" >
+<button id="log" name="log" class="submitButton" >Login</button>
+<h4 class="text-center" id="ic">
+<i class="fa-brands fa-square-facebook"></i>
+<i class="fa-brands fa-square-google-plus"></i>
+<i class="fa-brands fa-linkedin"></i>
+</h4>
+</form>
+
+
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        fetch('http://127.0.0.1:8000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+                alert('Login successful');
+                // Redirect or take action after successful login
+            } else {
+                alert('Login SuccessFul');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Login SuccessFul');
+        });
+    });
+</script>
+
+
+</body>
+
+</html>
