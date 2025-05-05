@@ -1,5 +1,6 @@
 #login-falcon{
     margin:70px auto ;
+    width: 95%;
     background-color: #1a1a2e;
 }
 .cop{
@@ -23,3 +24,4 @@
     border: none;
     border-radius: 5px;
 }
+
