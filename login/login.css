@@ -1,0 +1,25 @@
+#login-falcon{
+    margin:70px auto ;
+    background-color: #1a1a2e;
+}
+.cop{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+.cop p{
+    margin: 0px 5px;
+    font-size: 15px;
+}
+.cop a{
+    display: inline-block;
+    font-size: 15px;
+}
+#login-falcon input{
+    background: #29293d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

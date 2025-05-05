@@ -39,9 +39,9 @@ const translations = {
   ar: {
     // شريط التنقل
     navHome: "الرئيسية",
-    falcon: "سبانديكس",
+    falcon: "امير سلامة",
     about: "من نحن",
-    server: "الخادم",
+    server: "الخدمات",
     signup: "إنشاء حساب",
     login: "تسجيل الدخول",
     countactus: "اتصل بنا",

@@ -40,8 +40,8 @@ const translations = {
     // NavBar
     navHome:"الصفحة الرئسية",
     falcon : "امير سلامة",
-    about:"حول الصفحة",
-    server: "خدمات",
+    about:"من نحن",
+    server: "الخدمات",
     signup: "إنشاء حساب",
     login:"تسجيل الدخول",
     countactus:"اتصل بنا",

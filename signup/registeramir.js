@@ -50,7 +50,7 @@ google:"Sign up with Google",
   ar: {
     // شريط التنقل
     navHome: "الرئيسية",
-    falcon: "سبانديكس",
+    falcon: "امير سلامة",
     about: "من نحن",
     server: "الخادم",
     signup: "إنشاء حساب",
