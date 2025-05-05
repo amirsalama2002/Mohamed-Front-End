@@ -37,39 +37,30 @@ const translations = {
   },
   // العربية
   ar: {
-    // شريط التنقل
-    navHome: "الرئيسية",
-    falcon: "سبانديكس",
-    about: "من نحن",
-    server: "الخادم",
+    // NavBar
+    navHome:"الصفحة الرئسية",
+    falcon : "امير سلامة",
+    about:"حول الصفحة",
+    server: "خدمات",
     signup: "إنشاء حساب",
-    login: "تسجيل الدخول",
-    countactus: "اتصل بنا",
-    arabe: "العربية",
-    German: "الألمانية",
-    english: "الإنجليزية",
+    login:"تسجيل الدخول",
+    countactus:"اتصل بنا",
+    arabe:"عربية",
+    German:"الألمانية",
+    english:"انجلزية",
     Chinese: "الصينية",
     Hindi: "الهندية",
-    Italian: "الإيطالية",
-    French: "الفرنسية",
-    Spanish: "الإسبانية",
-    Russian: "الروسية",
-    Portuguese: "البرتغالية",
-    Hebrew: "العبرية",
-    // شريط التنقل
-    // التسجيل
-    signup1: "إنشاء حساب",
-    amir: "الاسم",
-    email: "البريد الإلكتروني",
-    mo: "كلمة المرور",
-    loo: "أوافق على الشروط",
-    signup2: "إنشاء حساب",
-    or: "أو",
-    github: "التسجيل عبر GitHub",
-    google: "التسجيل عبر Google",
-    // التسجيل
-  },
+    Italian: "إيطالية",
+    French: "فرنسية",
+    Spanish: "اسبانية",
+    Russian: "روسية",
+    Portuguese: "برتغالية",
+    Hebrew: "عبرية"
+
+
+    // NavBar
   
+  },
   // الالمانية
   de: {
     // NavBar
@@ -94,8 +85,6 @@ const translations = {
     // NavBar
   },    
 
-  // الالمانية
-  
   // الصنية
   zh: {
     // NavBar

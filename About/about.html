@@ -7,16 +7,17 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/flowbite@1.6.4/dist/flowbite.min.js"></script>      
         <link rel="stylesheet" href="../navbar/navbar.css">
-        
+        <link rel="stylesheet" href="./home/home.css">
     </head>
-    <body>
+    <body class="light-mode">
 
 <!-- navbar -->
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="../home/home.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
          <p id="falcon"></p>
     </a>
+
     <!--  -->
     <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
       <!-- الغة -->
@@ -28,12 +29,21 @@
               </svg>
             </button>
             <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-              <div id="hidden" onclick="setLanguage('en')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                <svg  class="w-5 h-5 rounded-full me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
-                <p id="english"></p>
+               <div id="hidden" onclick="setLanguage('en')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>  
+                  <p id="english"></p>
               </div>
               <div  id="hidden" onclick="setLanguage('ar')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
+                <svg class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" aria-hidden="true">
+                  <path fill="#006C35" d="M0 0h640v480H0z"/>
+                  <g fill="#fff" transform="translate(60 160)">
+                    <text x="0" y="60" font-family="Arial, sans-serif" font-size="70" font-weight="bold">لا إله إلا الله</text>
+                    <text x="0" y="160" font-family="Arial, sans-serif" font-size="70" font-weight="bold">محمد رسول الله</text>
+                    <line x1="50" y1="220" x2="590" y2="220" stroke="#fff" stroke-width="12"/>
+                    <path d="M120,220 L220,240 L320,220 L420,240 L520,220" stroke="#fff" stroke-width="12" fill="none"/>
+                  </g>
+                </svg>
+                
                 <p id="arabe"></p>
               </div>
               <!-- Garman -->
@@ -42,6 +52,144 @@
                 <p id="German"></p>
               </div>
               <!-- Garman -->
+               <!-- sine -->
+               <div  id="hidden" onclick="setLanguage('zh')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <svg class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" aria-hidden="true">
+                  <!-- خلفية العلم -->
+                  <path fill="#de2910" d="M0 0h640v480H0z"/>
+                  
+                  <!-- النجمة الكبيرة -->
+                  <path fill="#ffde00" d="M106.7 68.9l12.6 38.7h40.7l-32.9 23.9 12.7 38.8-32.9-24-32.9 24 12.8-38.8-32.9-23.9h40.7z"/>
+                  
+                  <!-- النجمة الثانية -->
+                  <path fill="#ffde00" d="M76.3 119.6l10.4 32.3h33.4l-27.2 19.7 10.5 32.4-27.3-19.8-27.3 19.8 10.5-32.4-27.2-19.7h33.4z"/>
+                  
+                  <!-- النجمة الثالثة -->
+                  <path fill="#ffde00" d="M45.9 170.3l8.3 25.8h27.2l-21.8 15.7 8.4 25.8-21.8-15.8-21.9 15.8 8.4-25.8-21.8-15.7h27.2z"/>
+                  
+                  <!-- النجمة الرابعة -->
+                  <path fill="#ffde00" d="M15.5 221l6.2 19.4h20l-16.3 11.7 6.3 19.4-16.3-11.8-16.4 11.8 6.3-19.4-16.3-11.7h20z"/>
+                </svg>
+                
+                <p id="Chinese"></p>
+              </div>
+               <!-- sine -->
+                <!-- Hinde -->
+                <div  id="hidden" onclick="setLanguage('hi')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+                    <g fill-rule="evenodd">
+                      <path fill="#ff9933" d="M0 0h640v160H0z"/>
+                      <path fill="#fff" d="M0 160h640v160H0z"/>
+                      <path fill="#128807" d="M0 320h640v160H0z"/>
+                      <circle cx="320" cy="240" r="52" fill="#000080"/>
+                      <g transform="translate(320,240)" stroke="#fff" stroke-width="4">
+                        <circle r="48" fill="none"/>
+                        <g id="spoke">
+                          <line y1="-48" y2="-52"/>
+                        </g>
+                        <use href="#spoke" transform="rotate(15)"/>
+                        <use href="#spoke" transform="rotate(30)"/>
+                        <use href="#spoke" transform="rotate(45)"/>
+                        <use href="#spoke" transform="rotate(60)"/>
+                        <use href="#spoke" transform="rotate(75)"/>
+                        <use href="#spoke" transform="rotate(90)"/>
+                        <use href="#spoke" transform="rotate(105)"/>
+                        <use href="#spoke" transform="rotate(120)"/>
+                        <use href="#spoke" transform="rotate(135)"/>
+                        <use href="#spoke" transform="rotate(150)"/>
+                        <use href="#spoke" transform="rotate(165)"/>
+                        <use href="#spoke" transform="rotate(180)"/>
+                        <use href="#spoke" transform="rotate(195)"/>
+                        <use href="#spoke" transform="rotate(210)"/>
+                        <use href="#spoke" transform="rotate(225)"/>
+                        <use href="#spoke" transform="rotate(240)"/>
+                        <use href="#spoke" transform="rotate(255)"/>
+                        <use href="#spoke" transform="rotate(270)"/>
+                        <use href="#spoke" transform="rotate(285)"/>
+                        <use href="#spoke" transform="rotate(300)"/>
+                        <use href="#spoke" transform="rotate(315)"/>
+                        <use href="#spoke" transform="rotate(330)"/>
+                        <use href="#spoke" transform="rotate(345)"/>
+                      </g>
+                    </g>
+                  </svg>
+                  
+                  <p id="Hindi"></p>
+                </div>
+                <!-- Hinde -->
+                 <!-- itale -->
+                 <div  id="hidden" onclick="setLanguage('it')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg> 
+                  <p id="Italian"></p>
+                </div>
+                 <!-- itale -->
+                  <!-- Ftinse -->
+                  <div  id="hidden" onclick="setLanguage('fr')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    <svg class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" aria-hidden="true">
+                      <g fill-rule="evenodd">
+                        <path fill="#0055A4" d="M0 0h213.3v480H0z"/>
+                        <path fill="#FFFFFF" d="M213.3 0h213.4v480H213.3z"/>
+                        <path fill="#EF4135" d="M426.7 0h213.3v480H426.7z"/>
+                      </g>
+                    </svg>
+                     
+                    <p id="French"></p>
+                  </div>
+                  <!-- Ftinse -->
+                   <!-- Spane -->
+                   <div  id="hidden" onclick="setLanguage('es')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    <svg class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" aria-hidden="true">
+                      <g fill-rule="evenodd">
+                        <path fill="#C60C30" d="M0 0h640v480H0z"/>
+                        <path fill="#F1BF00" d="M0 160h640v160H0z"/>
+                      </g>
+                    </svg>  
+                    <p id="Spanish"></p>
+                  </div>
+                   <!-- Spane -->
+                    <!-- ruse -->
+                    <div  id="hidden" onclick="setLanguage('ru')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <svg class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" aria-hidden="true">
+                        <g fill-rule="evenodd">
+                          <path fill="#fff" d="M0 0h640v160H0z"/>
+                          <path fill="#0039a6" d="M0 160h640v160H0z"/>
+                          <path fill="#d52b1e" d="M0 320h640v160H0z"/>
+                        </g>
+                      </svg>                      
+                      <p id="Russian"></p>
+                    </div>
+                    <!-- ruse -->
+                     <!-- Portuguese -->
+                     <div  id="hidden" onclick="setLanguage('pt')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <svg class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" aria-hidden="true">
+                        <g fill-rule="evenodd">
+                          <path fill="#006600" d="M0 0h256v480H0z"/>
+                          <path fill="#F00" d="M256 0h384v480H256z"/>
+                          <circle cx="184" cy="240" r="110" fill="#ffcc00"/>
+                          <circle cx="184" cy="240" r="90" fill="#006600"/>
+                          <path fill="#fff" d="M174.1 238.1l10.7 10.7-10.7 10.7-10.7-10.7z"/>
+                        </g>
+                      </svg>
+                                           
+                      <p id="Portuguese"></p>
+                    </div>
+                     <!-- Portuguese -->
+                      <!-- العبرية -->
+                      <div  id="hidden" onclick="setLanguage('he')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <svg class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" aria-hidden="true">
+                          <g fill-rule="evenodd">
+                            <!-- Background color -->
+                            <path fill="#ffffff" d="M0 0h640v480H0z"/>
+                            <!-- Blue Stripes -->
+                            <path fill="#0066b3" d="M0 72h640v48H0zm0 360h640v48H0z"/>
+                            <!-- Star of David -->
+                            <path fill="#0066b3" d="M320 175.5l-20.9 63.6h-67.1l54.4 39.6-20.9 63.6 54.5-39.7 54.4 39.7-20.9-63.6 54.4-39.6h-67.1z"/>
+                          </g>
+                        </svg>
+                        
+                        <p id="Hebrew"></p>
+                      </div>
+                      <!-- العبرية -->
             </div>
           </div>
       <!-- الغة -->
@@ -58,7 +206,7 @@
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
       <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-            <a id="navHome" href="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page"></a>
+            <a id="navHome" href="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" ></a>
           </li>
           <li>
             <a id="about" href="../About/about.html"    class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"></a>
@@ -72,7 +220,7 @@
         <div class="flex items-center md:order-2 space-x-3 rtl:space-x-reverse">
             <a id="signup" href="../signup/registeramir.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center">
               </a>
-            <a id="login" href="../login/.html" class="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-700 font-medium rounded-lg text-sm px-4 py-2 text-center">
+            <a id="login" href="../login/login.html" class="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-700 font-medium rounded-lg text-sm px-4 py-2 text-center">
             </a>
         
           </div>
@@ -83,6 +231,8 @@
 <!-- navbar -->
 
 
-  <script src="../navbar/navbar.js"></script>
-    </body> 
+
+
+<script src="./aboout.js"></script>
+</body> 
 </html>

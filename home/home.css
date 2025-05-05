@@ -1,0 +1,17 @@
+body.light-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+ 
+  background-color: #ffffff;
+  color: #000000;
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
