@@ -2,46 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Admin Panel</title>
-  <style>
-    body { font-family: Arial; margin: 20px; }
-    .msg { border-bottom: 1px solid #ccc; padding: 10px 0; }
-    .msg span { display: inline-block; width: 80%; }
-    button { background: red; color: white; border: none; padding: 5px; }
-  </style>
+  <title>Live Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
 </head>
-<body>
-  <h2>Admin - All Messages</h2>
-  <div id="messages"></div>
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen">
 
+  <!-- User List -->
+  <div id="userList" class="fixed bottom-6 left-6 bg-white p-4 rounded-lg shadow-lg w-72 z-50">
+    <h3 class="text-indigo-700 text-lg font-semibold">Users</h3>
+    <ul id="users" class="space-y-2 mt-3">
+      <!-- List of users will be injected here -->
+    </ul>
+  </div>
+
+  <!-- Chat Button -->
+  <button id="toggleChat"
+          class="fixed bottom-6 left-6 bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700">
+    💬
+  </button>
+
+  <!-- Chat Panel -->
+  <div id="chatPanel"
+       class="fixed bottom-20 left-6 w-80 bg-white rounded-xl shadow-2xl p-4 hidden flex-col z-50">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-3">
+      <h2 id="chatHeader" class="text-lg font-semibold text-indigo-700">Messages</h2>
+      <button onclick="toggleChat()" class="text-gray-400 hover:text-red-500">✕</button>
+    </div>
+
+    <!-- Chat area -->
+    <div id="chat" class="border border-gray-200 rounded-md p-3 h-52 overflow-y-scroll bg-gray-50 text-sm space-y-2 mb-2">
+      <!-- Messages will be inserted here -->
+    </div>
+
+    <!-- Inputs -->
+    <input type="text" id="username" placeholder="Your name"
+           class="w-full border border-gray-300 rounded-md p-2 mb-1 text-sm"/>
+
+    <input type="text" id="message" placeholder="Your message"
+           class="w-full border border-gray-300 rounded-md p-2 mb-2 text-sm"/>
+
+    <button onclick="sendMessage()"
+            class="w-full bg-indigo-600 text-white font-medium py-2 rounded-lg hover:bg-indigo-700 transition duration-200 text-sm">
+      Send us a message
+    </button>
+  </div>
+
+  <!-- Scripts -->
   <script>
-    fetch('/api/messages')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("messages");
-        data.forEach(msg => {
-          const div = document.createElement('div');
-          div.className = 'msg';
-          div.innerHTML = `
-            <span><strong>${msg.username}:</strong> ${msg.content}</span>
-            <button onclick="deleteMessage(${msg.id}, this)">Delete</button>
-          `;
-          container.appendChild(div);
-        });
-      });
+    document.getElementById("toggleChat").addEventListener("click", toggleChat);
 
-    function deleteMessage(id, btn) {
-        fetch('http://127.0.0.1:8000/api/messages/' + id, { method: 'DELETE' })
-        .then(() => {
-          btn.parentElement.remove();
+    // Function to toggle the visibility of the chat panel
+    function toggleChat() {
+      const chatPanel = document.getElementById("chatPanel");
+      chatPanel.classList.toggle("hidden");
+    }
+
+    // Fetch and display users (you would need to replace this with an API call)
+    function loadUsers() {
+      const users = [
+        { id: 1, name: "Michael", avatar: "https://i.pravatar.cc/40?img=3" },
+        { id: 2, name: "Sarah", avatar: "https://i.pravatar.cc/40?img=5" }
+        // Add more users here
+      ];
+
+      const userList = document.getElementById('users');
+      users.forEach(user => {
+        const userElement = document.createElement('li');
+        userElement.classList.add('flex', 'items-center', 'space-x-2', 'cursor-pointer');
+        userElement.innerHTML = `
+          <img src="${user.avatar}" class="rounded-full w-10 h-10"/>
+          <span class="text-indigo-700">${user.name}</span>
+        `;
+        userElement.onclick = () => openChat(user);
+        userList.appendChild(userElement);
+      });
+    }
+
+    loadUsers();
+
+    // Open chat with the selected user
+    function openChat(user) {
+      document.getElementById("chatHeader").innerText = `Chat with ${user.name}`;
+      document.getElementById("chatPanel").classList.remove("hidden");
+
+      // Load messages for this chat (replace with actual API call)
+      fetch(`http://127.0.0.1:8000/api/messages/${user.id}`)
+        .then(res => res.json())
+        .then(messages => {
+          const chat = document.getElementById("chat");
+          chat.innerHTML = '';
+          messages.forEach(message => {
+            const messageElement = document.createElement('div');
+            messageElement.innerHTML = `<strong class="text-indigo-700">${message.username}</strong>: ${message.content}`;
+            chat.appendChild(messageElement);
+          });
+          chat.scrollTop = chat.scrollHeight;
         });
     }
-    const pass = prompt("Enter admin password:");
-if (pass !== "admin123") {
-  alert("Access denied");
-  location.href = "/";
-}
 
+    function sendMessage() {
+      const username = document.getElementById("username").value;
+      const content = document.getElementById("message").value;
+      const targetUserId = 1; // This should be dynamically set based on the selected user
+
+      if (!username || !content) return;
+
+      fetch('http://127.0.0.1:8000/api/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, content, target_user_id: targetUserId })
+      });
+
+      document.getElementById("message").value = '';
+    }
   </script>
+
 </body>
 </html>

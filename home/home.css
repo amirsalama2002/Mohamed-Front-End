@@ -56,3 +56,24 @@ button {
 }
 
 /* Heder Imgs */
+
+/* chat */
+.shadow-2xl {
+  background-color: #1a1a2e !important;
+  z-index: 999 !important;
+  width: 400px !important;
+}
+.shadow-2xl input{
+  background: #29293d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  border: none !important;
+  outline: none !important;
+}
+.shadow-2xl #chat{
+  background: #29293d !important;
+  border: 2px solid #1a1a2e !important;
+  outline: none !important;
+  color: white !important;
+}
