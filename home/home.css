@@ -21,7 +21,7 @@ button {
   margin-bottom: 4vw;
   /* border-radius: 15px; */
   max-width: 100vw;
-  height: 10vh;
+  height: 15vh;
   background-position: center;
   overflow: hidden;
   direction: rtl; /* هذا هو الجزء المهم */

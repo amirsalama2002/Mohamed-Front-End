@@ -240,7 +240,155 @@
         </div>
  <!-- imgs Heder -->
 
+<!-- chat -->
+ <div class=" from-blue-100 via-purple-100 to-pink-100 min-h-screen">
 
+    <!-- Chat Button -->
+    <button id="toggleChat"
+            class="fixed bottom-6 left-6 bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700">
+      💬
+    </button>
+  
+    <!-- Chat Panel -->
+    <div id="chatPanel"
+         class="fixed bottom-20 left-6 w-80 bg-white rounded-xl shadow-2xl p-4 hidden flex-col z-50">
+  
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="text-lg font-semibold text-indigo-700">Messages</h2>
+        <button onclick="document.getElementById('chatPanel').classList.add('hidden')" class="text-gray-400 hover:text-red-500">✕</button>
+      </div>
+  
+      <!-- Previous message -->
+      <div class="flex items-start space-x-2 p-2 rounded-lg hover:bg-gray-100 cursor-pointer mb-2">
+        <img src="https://i.pravatar.cc/40?img=3" class="rounded-full w-10 h-10" />
+        <div class="flex-1">
+          <div class="flex justify-between items-center">
+            <p class="font-semibold text-sm">Michael</p>
+            <span class="text-xs text-gray-500">1w ago</span>
+          </div>
+          <p class="text-sm text-gray-700 truncate">Hi, Thank you for reaching out to WPP Open...</p>
+        </div>
+        <span class="text-indigo-500 text-lg">›</span>
+      </div>
+  
+      <!-- Create a ticket -->
+      <div onclick="toggleTicketModal(true)"
+           class="flex items-start space-x-2 p-2 rounded-lg hover:bg-gray-100 cursor-pointer mb-3">
+        <img src="https://i.pravatar.cc/40?img=5" class="rounded-full w-10 h-10" />
+        <div class="flex-1">
+          <div class="flex justify-between items-center">
+            <p class="font-semibold text-sm">WPP Open</p>
+            <span class="text-xs text-gray-500">1w ago</span>
+          </div>
+          <p class="text-sm text-gray-700 truncate">Create a ticket</p>
+        </div>
+        <span class="text-indigo-500 text-lg">›</span>
+      </div>
+  
+      <!-- Chat area -->
+      <div id="chat" class="border border-gray-200 rounded-md p-3 h-52 overflow-y-scroll bg-gray-50 text-sm space-y-2 mb-2">
+        <!-- Messages will be inserted here -->
+      </div>
+  
+      <!-- Inputs -->
+      <input type="text" id="username" placeholder="Your name"
+             class="w-full border border-gray-300 rounded-md p-2 mb-1 text-sm"/>
+  
+      <input type="text" id="message" placeholder="Your message"
+             class="w-full border border-gray-300 rounded-md p-2 mb-2 text-sm"/>
+  
+      <button onclick="sendMessage()"
+              class="w-full bg-indigo-600 text-white font-medium py-2 rounded-lg hover:bg-indigo-700 transition duration-200 text-sm">
+        Send us a message
+      </button>
+    </div>
+  
+    <!-- Ticket Modal -->
+    <div id="ticketModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+      <div class="bg-white p-6 rounded-xl shadow-lg w-96">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-lg font-bold text-indigo-700">Create a Ticket</h3>
+          <button onclick="toggleTicketModal(false)" class="text-gray-500 text-xl hover:text-red-500">×</button>
+        </div>
+        <input type="text" id="ticketSubject" placeholder="Subject"
+               class="w-full border border-gray-300 rounded-md p-2 mb-3 text-sm" />
+  
+        <textarea id="ticketDescription" placeholder="Description"
+                  class="w-full border border-gray-300 rounded-md p-2 mb-3 text-sm" rows="4"></textarea>
+  
+        <button onclick="submitTicket()"
+                class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 text-sm">
+          Submit Ticket
+        </button>
+      </div>
+    </div>
+  
+    <!-- Scripts -->
+    <script>
+      document.getElementById("toggleChat").addEventListener("click", () => {
+        document.getElementById("chatPanel").classList.toggle("hidden");
+      });
+  
+      function toggleTicketModal(show) {
+        const modal = document.getElementById("ticketModal");
+        if (show) {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+        } else {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+        }
+      }
+  
+      function submitTicket() {
+        const subject = document.getElementById("ticketSubject").value;
+        const description = document.getElementById("ticketDescription").value;
+        if (!subject || !description) return alert("Please fill in all fields.");
+  
+        // Fake submission for demo
+        console.log("Ticket Submitted:", { subject, description });
+        toggleTicketModal(false);
+      }
+  
+      const pusher = new Pusher("c5eda9c696dd371a45be", {
+        cluster: "eu"
+      });
+  
+      const channel = pusher.subscribe("chat");
+      channel.bind("App\\Events\\MessageSent", data => {
+        appendMessage(data.message);
+      });
+  
+      fetch('http://127.0.0.1:8000/api/messages')
+        .then(res => res.json())
+        .then(messages => messages.forEach(appendMessage));
+  
+      function appendMessage(message) {
+        const chat = document.getElementById("chat");
+        chat.innerHTML += `<div><strong class="text-indigo-700">${message.username}</strong>: ${message.content}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+      }
+  
+      function sendMessage() {
+        const username = document.getElementById("username").value;
+        const content = document.getElementById("message").value;
+  
+        if (!username || !content) return;
+  
+        fetch('http://127.0.0.1:8000/api/messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, content })
+        });
+  
+        document.getElementById("message").value = '';
+      }
+    </script>
+ </div>
+<!-- chat -->
 
 <script src="./home/index.js"></script>
 </body> 

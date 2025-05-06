@@ -34,6 +34,15 @@ function togglePassword() {
       Portuguese:"Portuguese",
       Hebrew:"Hebrew",
       // NavBar
+      // Countactus
+      Contact_Us:"Contact Us",
+      name_Contact_Us:"Name",
+      email_Contact_Us:"Email",
+      phone_Contact_Us:"Phone",
+      messge_Contact_Us:"Message",
+      send_Contact_Us:"Send Message",
+      fill:"Fill up the form below to send us a message."
+      // Countactus
     },
     // العربية
     ar: {
@@ -55,10 +64,17 @@ function togglePassword() {
       Spanish: "اسبانية",
       Russian: "روسية",
       Portuguese: "برتغالية",
-      Hebrew: "عبرية"
-  
-  
+      Hebrew: "عبرية",
       // NavBar
+      // Countactus
+      Contact_Us:"اتصل بنا ",
+      email_Contact_Us:"البريد الإلكتروني",
+      name_Contact_Us:"الاسم",
+      phone_Contact_Us:"التلفون",
+      messge_Contact_Us:"رسالة",
+      send_Contact_Us:"أرسل رسالة",
+      fill:"إملأ النموذج أدناه لإرسال رسالة إلينا."
+      // Countactus
     
     },
     // الالمانية
@@ -81,8 +97,17 @@ function togglePassword() {
       Spanish: "Spanisch",
       Russian: "Russisch",
       Portuguese: "Portugiesisch",
-      Hebrew: "Hebräisch"
+      Hebrew: "Hebräisch",
       // NavBar
+      // Countactus
+      Contact_Us: "Kontaktiere uns",
+      name_Contact_Us:"Name",
+      email_Contact_Us:"E-Mail",
+      phone_Contact_Us:"Telefon",
+      messge_Contact_Us:"Nachricht",
+      send_Contact_Us:"Nachricht senden",
+      fill:"Füllen Sie das folgende Formular aus, um uns eine Nachricht zu senden."
+      // Countactus
     },    
   
     // الصنية
@@ -105,8 +130,17 @@ function togglePassword() {
       Spanish: "西班牙语",
       Russian: "俄语",
       Portuguese: "葡萄牙语",
-      Hebrew: "希伯来语"
+      Hebrew: "希伯来语",
       // NavBar
+      // Countactus
+      Contact_Us:"联系我们",
+      name_Contact_Us:"姓名",
+      email_Contact_Us:"电子邮件",
+      phone_Contact_Us:"电话",
+      messge_Contact_Us: "信息",
+      send_Contact_Us:"发送消息",
+      fill:"请填写下面的表格以向我们发送消息。"
+      // Countactus
     },
     // الهندية
     hi: {
@@ -127,7 +161,16 @@ function togglePassword() {
       Spanish: "西班牙语",
       Russian: "रूसी",
       Portuguese: "पुर्तगाली",
-      Hebrew: "हिब्रू"
+      Hebrew: "हिब्रू",
+      // Countactus
+      Contact_Us: "संपर्क करें",
+      name_Contact_Us: "नाम",
+      email_Contact_Us:"ईमेल",
+      phone_Contact_Us:"फ़ोन",
+      messge_Contact_Us:"संदेश",
+      send_Contact_Us:"संदेश भेजें",
+      fill:"कृपया हमें संदेश भेजने के लिए नीचे दिया गया फ़ॉर्म भरें।"
+      // Countactus
   
   
     },
@@ -150,7 +193,15 @@ function togglePassword() {
       Spanish: "Spagnolo",
       Russian: "Russo",
       Portuguese: "Portoghese",
-      Hebrew: "Ebraico"
+      Hebrew: "Ebraico",
+      // Countactus
+      Contact_Us:"Contattaci",
+      name_Contact_Us:"Nome",
+      email_Contact_Us:"Email",
+      phone_Contact_Us:"Telefono",
+      messge_Contact_Us:"Messaggio",
+      send_Contact_Us:"Invia messaggio",
+      fill:"Compila il modulo qui sotto per inviarci un messaggio."
   
     },
     // الفرنسية
@@ -172,7 +223,16 @@ function togglePassword() {
       Spanish: "Espagnol",
       Russian: "Russe",
       Portuguese: "Portugais",
-      Hebrew: "Hébreu"
+      Hebrew: "Hébreu",
+      // Countactus
+      Contact_Us: "Contactez-nous",
+      name_Contact_Us:"Nom",
+      email_Contact_Us:"Email",
+      phone_Contact_Us:"Téléphone",
+      messge_Contact_Us:"Message",
+      send_Contact_Us:"Envoyer le message",
+      fill:"Veuillez remplir le formulaire ci-dessous pour nous envoyer un message."
+      // Countactus
     },
     // الاسبانية
     es: {
@@ -194,6 +254,15 @@ function togglePassword() {
       Russian: "Ruso",
       Portuguese: "Portugués",
       Hebrew: "Hebreo",
+      // Countactus
+      Contact_Us:"Contáctanos",
+      name_Contact_Us:"Nombre",
+      email_Contact_Us:"Correo electrónico",
+      phone_Contact_Us:"Teléfono",
+      messge_Contact_Us:"Mensaje",
+      send_Contact_Us: "Enviar mensaje",
+      fill:"Por favor, rellena el siguiente formulario para enviarnos un mensaje."
+      // Countactus
     },
     // الروسية
     ru: {
@@ -214,7 +283,16 @@ function togglePassword() {
       Spanish: "Испанский",
       Russian: "Русский",
       Portuguese: "Португальский",
-      Hebrew: "Иврит"
+      Hebrew: "Иврит",
+      // Countactus
+      Contact_Us:"Связаться с нами",
+      name_Contact_Us: "Имя",
+      email_Contact_Us:"Электронная почта",
+      phone_Contact_Us: "Телефон",
+      messge_Contact_Us:"Сообщение",
+      send_Contact_Us:"Отправить сообщение",
+      fill:"Пожалуйста, заполните форму ниже, чтобы отправить нам сообщение."
+      // Countactus
   
   
     },
@@ -238,7 +316,16 @@ function togglePassword() {
       Spanish: "Espanhol",
       Russian: "Russo",
       Portuguese: "Português",
-      Hebrew: "Hebraico"
+      Hebrew: "Hebraico",
+      // Countactus
+      Contact_Us:"Fale Conosco",
+      name_Contact_Us:"Nome",
+      email_Contact_Us:"Email",
+      phone_Contact_Us:"Telefone",
+      messge_Contact_Us:"Mensagem",
+      send_Contact_Us:"Enviar Mensagem",
+      fill:"Por favor, preencha o formulário abaixo para nos enviar uma mensagem."
+      // Countactus
   
   
       // NavBar
@@ -263,7 +350,16 @@ function togglePassword() {
       Spanish: "ספרדית",
       Russian: "רוסית",
       Portuguese: "פורטוגזית",
-      Hebrew: "עברית"
+      Hebrew: "עברית",
+      // Countactus
+      Contact_Us: "צור קשר",
+      name_Contact_Us:"שם",
+      email_Contact_Us:"דוא\"ל",
+      phone_Contact_Us:"טלפון",
+      messge_Contact_Us:"הודעה",
+      send_Contact_Us:"שלח הודעה",
+      fill:"אנא מלא את הטופס למטה כדי לשלוח לנו הודעה.",
+      // Countactus
   
       // NavBar
     }
@@ -309,6 +405,16 @@ function togglePassword() {
     document.getElementById('Portuguese').textContent = t.Portuguese;
     document.getElementById('Hebrew').textContent = t.Hebrew;
     // NavBar
+    // Countact-us
+    document.getElementById('Contact_Us').textContent = t.Contact_Us;
+    document.getElementById('name_Contact_Us').textContent = t.name_Contact_Us;
+    document.getElementById('email_Contact_Us').textContent = t.email_Contact_Us;
+    document.getElementById('phone_Contact_Us').textContent = t.phone_Contact_Us;
+    document.getElementById('messge_Contact_Us').textContent = t.messge_Contact_Us;
+    document.getElementById('send_Contact_Us').textContent = t.send_Contact_Us;
+    document.getElementById('fill').textContent = t.fill;
+
+    // Countact-us
     // تغيير اتجاه النص واللغة
     document.getElementById('htmlTag').lang = lang;
     document.getElementById('htmlTag').dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -322,3 +428,49 @@ function togglePassword() {
   
   
   
+
+  // Countact uS
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+  
+  form.addEventListener('submit', function(e) {
+      const formData = new FormData(form);
+      e.preventDefault();
+  
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+  
+      result.innerHTML = "Please wait..."
+  
+      fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+              },
+              body: json
+          })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.innerHTML = json.message;
+              result.classList.remove("text-gray-500");
+              result.classList.add("text-green-500");
+            } else {
+              console.log(response);
+              result.innerHTML = json.message;
+              result.classList.remove("text-gray-500");
+              result.classList.add("text-red-500");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+          })
+          .then(function() {
+              form.reset();
+              setTimeout(() => {
+                  result.style.display = "none";
+              }, 3000);
+          });
+  });
