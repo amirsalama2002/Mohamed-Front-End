@@ -1,67 +1,20 @@
 body.light-mode {
-    background-color: #121212;
-    color: #ffffff;
+    margin: 0;
+      padding: 0;
+      background: #000000 !important;
+      font-family: sans-serif;
 }
 
 /* Dark Mode */
-body.dark-mode {
- 
-  background-color: #ffffff;
-  color: #000000;
-}
-
 button {
   margin: 20px;
   padding: 10px 20px;
   cursor: pointer;
 }
-
-/* Heder Imgs */
-.banner-container {
-  margin-bottom: 4vw;
-  /* border-radius: 15px; */
-  max-width: 100vw;
-  height: 15vh;
-  background-position: center;
-  overflow: hidden;
-  direction: rtl; /* هذا هو الجزء المهم */
-}
-
-.banner {
-  width: 100%;
-  display: flex;
-  animation: scrollBannerRTL 30s forwards infinite; /* استخدم حركة مخصصة للعربي */
-  border-radius: 15px;
-}
-
-.banner img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* تحريك البانر في الاتجاه المعاكس (لليمين) */
-@keyframes scrollBannerRTL {
-  0%, 100% {
-      transform: translateX(0);
-  }
-
-  25%, 75% {
-      transform: translateX(100%);
-  }
-
-  50% {
-      transform: translateX(200%);
-  }
-}
-
-/* Heder Imgs */
-
 /* chat */
 .shadow-2xl {
   background-color: #1a1a2e !important;
   z-index: 999 !important;
-  /* width: 400px !important; */
 }
 .shadow-2xl input{
   background: #29293d;
@@ -77,3 +30,43 @@ button {
   outline: none !important;
   color: white !important;
 }
+
+
+
+/* login imgs  */
+.logo-slider {
+  width: 100%;
+  background-color: rgb(255, 255, 255) !important;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px 0;
+}
+
+.logo-slider-track {
+  display: flex; 
+  animation: scroll 20s linear infinite;
+}
+
+.logo-slider img {
+  height: 40px;
+  margin: 0; 
+  vertical-align: middle;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+.logo-slider img {
+  height: 30px;
+  margin: 0 40px !important; /* إزالة المسافة بين الصور */
+  vertical-align: middle;
+  font-size: 50px !important;
+}
+
