@@ -257,7 +257,7 @@
   
       <!-- Header -->
       <div class="flex justify-between items-center mb-3">
-        <h2 class="text-lg font-semibold text-indigo-700">Messages</h2>
+        <h2 id="Messages" class="text-lg font-semibold text-indigo-700">Messages</h2>
         <button onclick="document.getElementById('chatPanel').classList.add('hidden')" class="text-gray-400 hover:text-red-500">✕</button>
       </div>
   
@@ -370,8 +370,15 @@
   
       function appendMessage(message) {
         const chat = document.getElementById("chat");
-        chat.innerHTML += `<div><strong class="text-indigo-700">${message.username}</strong>: ${message.content}</div>`;
-        chat.scrollTop = chat.scrollHeight;
+        chat.innerHTML += `
+        <div>
+          <h1 class="text-indigo-700">${message.created_at.slice(0, 10)} <span> ${message.created_at.slice(11, 19)}</span></h1>
+          <h3 class="text-blue-600 dark:text-sky-400">${message.username}</h3>
+          <p>${message.content}</p>
+
+          </</div>`;
+          chat.scrollTop = chat.scrollHeight;
+          // <strong class="text-indigo-700">${message.username}</strong>: ${message.content}  : ${message.created_at.slice(0, 10)}
       }
   
       function sendMessage() {

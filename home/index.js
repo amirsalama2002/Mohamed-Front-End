@@ -34,6 +34,9 @@ const translations = {
     Portuguese:"Portuguese",
     Hebrew:"Hebrew",
     // NavBar
+    // chat
+    Messages:"Messages",
+    // chat
   },
   // العربية
   ar: {
@@ -68,6 +71,9 @@ const translations = {
     github: "التسجيل عبر GitHub",
     google: "التسجيل عبر Google",
     // التسجيل
+    // chat
+    Messages:"ارسال رسالة",
+    // chat
   },
   
   // الالمانية
@@ -90,8 +96,11 @@ const translations = {
     Spanish: "Spanisch",
     Russian: "Russisch",
     Portuguese: "Portugiesisch",
-    Hebrew: "Hebräisch"
+    Hebrew: "Hebräisch",
     // NavBar
+    // chat
+    Messages:"Messge"
+    // chat
   },    
 
   // الالمانية
@@ -320,6 +329,10 @@ function applyLanguage(lang) {
   document.getElementById('Portuguese').textContent = t.Portuguese;
   document.getElementById('Hebrew').textContent = t.Hebrew;
   // NavBar
+  // chat
+  document.getElementById('Messages').textContent = t.Messages;
+
+  // chat
   // تغيير اتجاه النص واللغة
   document.getElementById('htmlTag').lang = lang;
   document.getElementById('htmlTag').dir = lang === 'ar' ? 'rtl' : 'ltr';

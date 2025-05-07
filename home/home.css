@@ -61,7 +61,7 @@ button {
 .shadow-2xl {
   background-color: #1a1a2e !important;
   z-index: 999 !important;
-  width: 400px !important;
+  /* width: 400px !important; */
 }
 .shadow-2xl input{
   background: #29293d;
