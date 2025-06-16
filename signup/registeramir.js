@@ -461,3 +461,25 @@ applyLanguage(savedLang);
 
 
 
+
+
+// scrool
+// الزرار
+const scrollBtn = document.getElementById("scrollToTopBtn");
+
+// اظهار الزرار عند النزول
+window.onscroll = function () {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+// عند الضغط على الزرار نرجع لأعلى الصفحة
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

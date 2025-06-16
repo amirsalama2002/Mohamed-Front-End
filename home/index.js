@@ -37,6 +37,10 @@ const translations = {
     // chat
     Messages:"Messages",
     // chat
+
+    // Heder
+       Heder:"Amir Salama Hassan"
+    // Heder
   },
   // العربية
   ar: {
@@ -74,6 +78,11 @@ const translations = {
     // chat
     Messages:"ارسال رسالة",
     // chat
+
+    // Heder
+    Heder:"امير سلامة حسن"
+
+    // Heder
   },
   
   // الالمانية
@@ -192,7 +201,7 @@ const translations = {
     Spanish: "Espagnol",
     Russian: "Russe",
     Portuguese: "Portugais",
-    Hebrew: "Hébreu"
+    Hebrew: "Hébreu",
   },
   // الاسبانية
   es: {
@@ -328,6 +337,7 @@ function applyLanguage(lang) {
   document.getElementById('Russian').textContent = t.Russian;
   document.getElementById('Portuguese').textContent = t.Portuguese;
   document.getElementById('Hebrew').textContent = t.Hebrew;
+  document.getElementById('Heder').textContent = t.Heder;
   // NavBar
   // chat
   document.getElementById('Messages').textContent = t.Messages;
@@ -345,3 +355,14 @@ applyLanguage(savedLang);
 
 
 
+
+
+
+
+// عند الضغط على الزرار نرجع لأعلى الصفحة
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

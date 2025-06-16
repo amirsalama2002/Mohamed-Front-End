@@ -159,3 +159,25 @@ label{
   }
   
   
+
+
+  /* navbar */
+
+
+  /* scrool */
+  #scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+    display: none; /* يبدأ مخفي */
+    background-color: #123456;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+    width: 80px;
+  }
+  
