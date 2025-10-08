@@ -337,7 +337,7 @@ function applyLanguage(lang) {
   document.getElementById('Russian').textContent = t.Russian;
   document.getElementById('Portuguese').textContent = t.Portuguese;
   document.getElementById('Hebrew').textContent = t.Hebrew;
-  document.getElementById('Heder').textContent = t.Heder;
+  // document.getElementById('Heder').textContent = t.Heder;
   // NavBar
   // chat
   document.getElementById('Messages').textContent = t.Messages;
